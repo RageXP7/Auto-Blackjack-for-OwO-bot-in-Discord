@@ -70,12 +70,11 @@ while start:
     l = requests.get(discord_channel_url, headers=header)
     log = json.loads(l.text)
     result = str(log[0])
-    
-    if game:
-        list1 = result[8:27]
-
-    game = False
+    list1 = result[8:27]
     id = "".join(list1)
+    
+    game = False
+    
 
     if "human!" in result or f"owo bj {bet}" in result:
         print("Caught Redhanded - ABORTING")
